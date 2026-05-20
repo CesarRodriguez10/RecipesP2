@@ -11,6 +11,9 @@ android {
         }
     }
 
+
+
+
     defaultConfig {
         applicationId = "com.example.recipesp2"
         minSdk = 24
@@ -38,10 +41,18 @@ android {
         compose = true
     }
 }
+android {
 
+    buildFeatures {
+        viewBinding = true
+    }
+}
 dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
