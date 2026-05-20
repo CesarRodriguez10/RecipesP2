@@ -1,4 +1,8 @@
 package com.example.recipesp2.domain.usecase
 
-class GetRecipeDetailUseCase {
+import com.example.recipesp2.data.model.Recipe
+import com.example.recipesp2.data.repository.RecipeRepository
+
+class GetRecipeDetailUseCase(private val repository: RecipeRepository) {
+    suspend operator fun invoke(id: Int): Result<Recipe> = repository.getRecipeById(id)
 }
