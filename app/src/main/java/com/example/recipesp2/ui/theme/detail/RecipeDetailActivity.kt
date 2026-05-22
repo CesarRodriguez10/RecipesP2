@@ -8,8 +8,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.recipesp2.databinding.ActivityRecipeDetailBinding
-import com.example.recipesp2.ui.opinion.AddOpinionActivity
-import com.example.recipesp2.ui.stats.StatsActivity
+import com.example.recipesp2.ui.theme.opinion.AddOpinionActivity
+import com.example.recipesp2.ui.theme.stats.StatsActivity
 
 class RecipeDetailActivity : AppCompatActivity() {
 

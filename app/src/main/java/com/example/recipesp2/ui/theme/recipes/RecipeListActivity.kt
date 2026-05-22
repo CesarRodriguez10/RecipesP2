@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipesp2.data.model.Recipe
 import com.example.recipesp2.databinding.ActivityRecipeListBinding
-import com.example.recipesp2.ui.addrecipe.AddRecipeActivity
-import com.example.recipesp2.ui.detail.RecipeDetailActivity
+import com.example.recipesp2.ui.theme.addrecipe.AddRecipeActivity
+import com.example.recipesp2.ui.theme.detail.RecipeDetailActivity
 
 class RecipeListActivity : AppCompatActivity() {
 
