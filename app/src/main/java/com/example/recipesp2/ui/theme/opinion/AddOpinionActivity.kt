@@ -48,7 +48,7 @@ class AddOpinionActivity : AppCompatActivity() {
             binding.btnSubmit.isEnabled = !isLoading
         }
         viewModel.success.observe(this) {
-            Toast.makeText(this, "✅ Opinión registrada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Opinión registrada", Toast.LENGTH_SHORT).show()
             finish()
         }
         viewModel.error.observe(this) { msg ->
