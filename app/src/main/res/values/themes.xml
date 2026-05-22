@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Usamos Theme.AppCompat para asegurar compatibilidad total con AppCompatActivity y Toolbar -->
+    <style name="Theme.RecipesP2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#FF6F00</item>
+        <item name="colorPrimaryDark">#C43E00</item>
+        <item name="colorAccent">#03DAC6</item>
 
-    <style name="Theme.RecipesP2" parent="android:Theme.Material.Light.NoActionBar" />
+        <!-- Aseguramos que actionBarSize esté definido para evitar el error de inflación -->
+        <item name="actionBarSize">?android:attr/actionBarSize</item>
+
+        <item name="android:statusBarColor">#C43E00</item>
+    </style>
 </resources>
