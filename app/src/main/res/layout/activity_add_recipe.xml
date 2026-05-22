@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Toolbar manual -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Volver"
+                android:backgroundTint="#FF6F00"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nueva Receta"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginStart="12dp"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <!-- Nombre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la receta *"
+            android:textStyle="bold"
+            android:textColor="#212121"/>
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej. Pasta Alfredo"
+            android:inputType="textCapSentences"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Descripción -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripción (opcional)"
+            android:textStyle="bold"
+            android:textColor="#212121"/>
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Breve descripción de la receta..."
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Categoría -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categoría"
+            android:textStyle="bold"
+            android:textColor="#212121"/>
+
+        <EditText
+            android:id="@+id/etCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej. Italiana, Vegana..."
+            android:inputType="textCapSentences"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Tiempo de preparación -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiempo de preparación (minutos)"
+            android:textStyle="bold"
+            android:textColor="#212121"/>
+
+        <EditText
+            android:id="@+id/etPrepTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej. 30"
+            android:inputType="number"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Ingredientes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingredientes *"
+            android:textStyle="bold"
+            android:textColor="#212121"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etIngredient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Ej. 200g pasta"
+                android:inputType="textCapSentences"/>
+
+            <Button
+                android:id="@+id/btnAddIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:backgroundTint="#FF6F00"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#424242"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"
+            android:minHeight="32dp"/>
+
+        <!-- Pasos -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pasos de preparación *"
+            android:textStyle="bold"
+            android:textColor="#212121"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etStep"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Ej. Hervir el agua..."
+                android:inputType="textCapSentences"/>
+
+            <Button
+                android:id="@+id/btnAddStep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:backgroundTint="#FF6F00"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#424242"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp"
+            android:minHeight="32dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Porciones"
+            android:textStyle="bold"
+            android:textColor="#212121"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnDecrement"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="-"/>
+
+            <EditText
+                android:id="@+id/etPortions"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="1"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnIncrement"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="+"/>
+        </LinearLayout>
+        <!-- Botón guardar -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Guardar Receta"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF6F00"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
+
