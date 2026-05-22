@@ -5,6 +5,8 @@ import com.example.recipesp2.data.model.*
 import com.example.recipesp2.data.repository.RecipeRepository
 import com.example.recipesp2.domain.usecase.*
 import kotlinx.coroutines.launch
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 class RecipeDetailViewModel : ViewModel() {
 
@@ -19,6 +21,9 @@ class RecipeDetailViewModel : ViewModel() {
 
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
+
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean> = _loading
 
     fun loadRecipe(id: Int) {
         viewModelScope.launch {
