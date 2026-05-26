@@ -33,6 +33,7 @@ class AddRecipeViewModel : ViewModel() {
                 onSuccess = { _success.value = true },
                 onFailure = { _error.value = it.message }
             )
+            _loading.value = false
         }
     }
 }
