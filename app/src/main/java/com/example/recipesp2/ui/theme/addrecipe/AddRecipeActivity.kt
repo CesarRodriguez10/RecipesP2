@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
+import com.bumptech.glide.Glide
 import com.example.recipesp2.databinding.ActivityAddRecipeBinding
 
 class AddRecipeActivity : AppCompatActivity() {
@@ -22,6 +24,8 @@ class AddRecipeActivity : AppCompatActivity() {
         binding = ActivityAddRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         binding.btnBack.setOnClickListener { finish() }
 
         binding.btnIncrement.setOnClickListener {
@@ -32,6 +36,16 @@ class AddRecipeActivity : AppCompatActivity() {
         binding.btnDecrement.setOnClickListener {
             val current = binding.etPortions.text.toString().toIntOrNull() ?: 1
             if (current > 1) binding.etPortions.setText((current - 1).toString())
+        }
+
+        binding.etImageUrl.addTextChangedListener {
+            val url = it.toString().trim()
+            if (url.isNotEmpty()) {
+                binding.imgPreview.visibility = View.VISIBLE
+                Glide.with(this).load(url).into(binding.imgPreview)
+            } else {
+                binding.imgPreview.visibility = View.GONE
+            }
         }
 
         // Agregar ingrediente a la lista
@@ -56,6 +70,7 @@ class AddRecipeActivity : AppCompatActivity() {
 
         binding.btnSave.setOnClickListener {
             viewModel.saveRecipe(
+                image_url = binding.etImageUrl.text.toString().trim().ifBlank { null },
                 name = binding.etName.text.toString(),
                 description = binding.etDescription.text.toString(),
                 category = binding.etCategory.text.toString(),

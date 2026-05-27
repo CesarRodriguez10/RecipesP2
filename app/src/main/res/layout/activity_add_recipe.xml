@@ -224,6 +224,32 @@
                 android:layout_height="48dp"
                 android:text="+"/>
         </LinearLayout>
+
+        <!-- URL de imagen -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="URL de imagen (opcional)"
+            android:textStyle="bold"
+            android:textColor="#212121"/>
+
+        <EditText
+            android:id="@+id/etImageUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://ejemplo.com/imagen.jpg"
+            android:inputType="textUri"
+            android:layout_marginBottom="8dp"/>
+
+        <ImageView
+            android:id="@+id/imgPreview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Preview de la receta"/>
+
         <!-- Botón guardar -->
         <Button
             android:id="@+id/btnSave"
