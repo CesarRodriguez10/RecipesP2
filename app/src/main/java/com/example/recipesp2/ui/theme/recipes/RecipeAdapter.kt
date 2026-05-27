@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.recipesp2.R
 import com.example.recipesp2.data.model.Recipe
 import com.example.recipesp2.databinding.ItemRecipeBinding
 
@@ -17,6 +18,7 @@ class RecipeAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(recipe: Recipe) {
+            android.util.Log.d("IMAGEN", "URL: ${recipe.image_url}")
             binding.tvName.text = recipe.name
             binding.tvRating.text = "⭐ %.1f (%d)".format(recipe.avg_rating, recipe.opinion_count)
             binding.tvCategory.text = recipe.category ?: "Sin categoría"
@@ -25,6 +27,8 @@ class RecipeAdapter(
             if (!recipe.image_url.isNullOrBlank()) {
                 Glide.with(binding.root.context)
                     .load(recipe.image_url)
+                    .placeholder(R.drawable.ic_launcher_foreground)
+                    .error(R.drawable.ic_launcher_foreground)
                     .into(binding.ivRecipe)
             }
 
